@@ -6,7 +6,7 @@
  *
  * &copy; 2011 Jamie Lottering <http://github.com/JamieLottering>
  *                        <http://twitter.com/JamieLottering>
- * 
+ *
  */
 (function ($, window, document) {
 
@@ -18,7 +18,7 @@
   } else {
     document.documentElement.className = document.documentElement.className + ' dk_fouc';
   }
-  
+
   var
     // Public methods exposed to $.fn.dropkick()
     methods = {},
@@ -91,7 +91,7 @@
 
         // The completed dk_container element
         $dk = false,
-        
+
         // Disable feature
         isDisabled  = ($(this).attr('disabled') !== undefined) ? 'gd-disable' : '',
 
@@ -110,7 +110,7 @@
         data.value     = _notBlank($select.val()) || _notBlank($original.attr('value'));
         data.label     = $original.text();
         data.options   = $options;
-        
+
         // Disable Feature
         data.isDisabled  = isDisabled;
       }
@@ -326,7 +326,7 @@
     template = template.replace('{{ id }}', view.id);
     template = template.replace('{{ label }}', view.label);
     template = template.replace('{{ tabindex }}', view.tabindex);
-    
+
     // Disable Feature
     template = template.replace('{{ isDisabled }}', view.isDisabled);
 
@@ -364,7 +364,7 @@
 
       if(!$dk.hasClass('gd-disable')){
     	  _openDropdown($dk);
-      } 
+      }
 
       if ("ontouchstart" in window) {
         $dk.addClass('dk_touch');
@@ -382,11 +382,11 @@
         $dk     = $option.parents('.dk_container').first(),
         data    = $dk.data('dropkick')
       ;
-    
+
       _closeDropdown($dk);
       _updateFields($option, $dk);
       _setCurrent($option.parent(), $dk);
-    
+
       e.preventDefault();
       return false;
     });
